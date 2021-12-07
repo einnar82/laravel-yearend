@@ -3,8 +3,11 @@
 namespace App\Modules\Post\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Modules\Post\Filters\FilterByCreatedAt;
+use App\Modules\Post\Filters\FilterByName;
 use App\Modules\Post\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Pipeline\Pipeline;
 
 class PostsController extends Controller
 {
@@ -15,7 +18,14 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return Post::paginate();
+        return app(Pipeline::class)
+            ->send(Post::query())
+            ->through([
+                FilterByCreatedAt::class,
+                FilterByName::class
+            ])
+            ->thenReturn()
+            ->simplePaginate();
     }
 
     /**
