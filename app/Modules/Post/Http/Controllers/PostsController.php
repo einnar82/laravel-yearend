@@ -3,6 +3,7 @@
 namespace App\Modules\Post\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Modules\Post\Models\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -14,7 +15,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        return Post::paginate();
     }
 
     /**
@@ -25,40 +26,40 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Post::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Post $post
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        return $post;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Post $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        return tap($post)->update($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Post $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        return $post->delete();
     }
 }
