@@ -2,6 +2,8 @@
 
 namespace App\Modules\Post\Manager;
 
+use App\Modules\Post\Drivers\CSVDriver;
+use App\Modules\Post\Drivers\JsonDriver;
 use Illuminate\Support\Manager;
 
 class PostExportManager extends Manager
@@ -13,7 +15,7 @@ class PostExportManager extends Manager
      */
     public function getDefaultDriver()
     {
-
+        return 'json';
     }
 
     /**
@@ -21,7 +23,7 @@ class PostExportManager extends Manager
      */
     public function createJsonDriver()
     {
-
+        return new JsonDriver;
     }
 
     /**
@@ -29,6 +31,6 @@ class PostExportManager extends Manager
      */
     public function createCsvDriver()
     {
-
+        return new CSVDriver;
     }
 }
