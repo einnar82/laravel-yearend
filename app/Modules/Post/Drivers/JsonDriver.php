@@ -2,7 +2,9 @@
 
 namespace App\Modules\Post\Drivers;
 
-class JsonDriver
+use App\Modules\Post\Contracts\ExportContract;
+
+class JsonDriver implements ExportContract
 {
 
 }

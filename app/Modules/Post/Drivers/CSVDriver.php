@@ -2,7 +2,9 @@
 
 namespace App\Modules\Post\Drivers;
 
-class CSVDriver
+use App\Modules\Post\Contracts\ExportContract;
+
+class CSVDriver implements ExportContract
 {
 
 }
