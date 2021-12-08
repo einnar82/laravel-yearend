@@ -37,9 +37,10 @@ class PostExportManager extends Manager implements PostExportContract
 
     /**
      * @param array $data
+     * @param string|null $driver
      * @return void
      */
-    public function export(array $data = [], $driver = null)
+    public function export(array $data = [], string $driver = null)
     {
         return $this->driver($driver)->export($data);
     }

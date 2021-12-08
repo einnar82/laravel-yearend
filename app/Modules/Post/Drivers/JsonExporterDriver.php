@@ -21,9 +21,10 @@ class JsonExporterDriver implements PostExportContract
 
     /**
      * @param array $data
+     * @param string|null $driver
      * @return string
      */
-    public function export(array $data = [], $driver = null): string
+    public function export(array $data = [], string $driver = null): string
     {
         return 'export to json';
     }
