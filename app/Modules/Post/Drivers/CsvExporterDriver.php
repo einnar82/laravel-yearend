@@ -2,9 +2,9 @@
 
 namespace App\Modules\Post\Drivers;
 
-use App\Modules\Post\Contracts\ExportContract;
+use App\Modules\Post\Contracts\PostExportContract;
 
-class CsvExporterDriver implements ExportContract
+class CsvExporterDriver implements PostExportContract
 {
     /**
      * @var array

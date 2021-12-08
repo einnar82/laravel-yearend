@@ -3,19 +3,19 @@
 namespace App\Modules\Post\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Modules\Post\Contracts\ExportContract;
+use App\Modules\Post\Contracts\PostExportContract;
 
 class PostExportController extends Controller
 {
     /**
-     * @var ExportContract
+     * @var PostExportContract
      */
     private $exportContract;
 
     /**
-     * @param ExportContract $exportContract
+     * @param PostExportContract $exportContract
      */
-    public function __construct(ExportContract $exportContract)
+    public function __construct(PostExportContract $exportContract)
     {
         $this->exportContract = $exportContract;
     }
