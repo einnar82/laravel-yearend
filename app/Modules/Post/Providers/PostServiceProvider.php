@@ -2,6 +2,7 @@
 
 namespace App\Modules\Post\Providers;
 
+use App\Modules\Post\Commands\PostImportCommand;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,11 @@ class PostServiceProvider extends ServiceProvider
                 ->middleware('api')
                 ->group(base_path('app/Modules/Post/Routes/api.php'));
         });
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                PostImportCommand::class,
+            ]);
+        }
     }
 }
