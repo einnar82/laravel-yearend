@@ -4,5 +4,10 @@ namespace App\Modules\Post\Contracts;
 
 interface PostExportContract
 {
-    public function export(array $data = [], $driver = null);
+    /**
+     * @param array $data
+     * @param string|null $driver
+     * @return mixed
+     */
+    public function export(array $data = [], string $driver = null);
 }
