@@ -19,7 +19,7 @@ class CsvExporterDriver implements PostExportContract
         $this->options = $options;
     }
 
-    public function export(array $data = []): string
+    public function export(array $data = [], $driver = null): string
     {
         return 'export to csv';
     }
