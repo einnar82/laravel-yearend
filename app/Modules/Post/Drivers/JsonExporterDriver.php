@@ -23,7 +23,7 @@ class JsonExporterDriver implements ExportContract
      * @param array $data
      * @return string
      */
-    public function export(array $data): string
+    public function export(array $data = []): string
     {
         return 'export to json';
     }

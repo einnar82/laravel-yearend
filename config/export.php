@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'driver' => 'json',
+    'driver' => env('EXPORT_DRIVER', 'json'),
 
     'json' => [
 

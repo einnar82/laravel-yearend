@@ -1,5 +1,6 @@
 <?php
 
+use App\Modules\Post\Http\Controllers\PostExportController;
 use App\Modules\Post\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('/posts', PostsController::class);
+Route::get('/export/posts', [PostExportController::class, 'export']);
