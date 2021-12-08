@@ -2,12 +2,12 @@
 
 namespace App\Modules\Post\Manager;
 
-use App\Modules\Post\Contracts\ExportContract;
+use App\Modules\Post\Contracts\PostExportContract;
 use App\Modules\Post\Drivers\CsvExporterDriver;
 use App\Modules\Post\Drivers\JsonExporterDriver;
 use Illuminate\Support\Manager;
 
-class PostExportManager extends Manager implements ExportContract
+class PostExportManager extends Manager implements PostExportContract
 {
     /**
      * Get the default driver name.

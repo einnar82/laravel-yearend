@@ -2,7 +2,7 @@
 
 namespace App\Modules\Post\Contracts;
 
-interface ExportContract
+interface PostExportContract
 {
     public function export(array $data = []);
 }

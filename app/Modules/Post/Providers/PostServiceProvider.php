@@ -2,7 +2,7 @@
 
 namespace App\Modules\Post\Providers;
 
-use App\Modules\Post\Contracts\ExportContract;
+use App\Modules\Post\Contracts\PostExportContract;
 use App\Modules\Post\Manager\PostExportManager;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use App\Modules\Post\Commands\PostImportCommand;
@@ -27,7 +27,7 @@ class PostServiceProvider extends ServiceProvider implements DeferrableProvider
             return $app['export']->driver();
         });
 
-        $this->app->bind(ExportContract::class, function ($app) {
+        $this->app->bind(PostExportContract::class, function ($app) {
             return new PostExportManager($app);
         });
     }
